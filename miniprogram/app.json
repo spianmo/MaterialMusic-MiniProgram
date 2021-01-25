@@ -1,25 +1,39 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/openapi/openapi",
-    "pages/openapi/serverapi/serverapi",
-    "pages/openapi/callback/callback",
-    "pages/openapi/cloudid/cloudid",
-    "pages/im/im",
-    "pages/im/room/room"
+    "pages/music/music",
+    "pages/find/find",
+    "pages/profile/profile"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#d43c33",
+    "navigationBarTitleText": "MaterialMusic",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#474747",
+    "selectedColor": "#d43c43",
+    "list": [
+    {
+      "pagePath": "pages/music/music",
+      "text": "Music",
+      "iconPath": "images/tab/music.png",
+      "selectedIconPath": "images/tab/music-actived.png"
+    },
+    {
+      "pagePath": "pages/find/find",
+      "text": "Discover",
+      "iconPath": "images/tab/find.png",
+      "selectedIconPath": "images/tab/find-actived.png"
+    },
+    {
+      "pagePath": "pages/profile/profile",
+      "text": "Profile",
+      "iconPath": "images/tab/profile.png",
+      "selectedIconPath": "images/tab/profile-actived.png"
+    }
+  ]
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
