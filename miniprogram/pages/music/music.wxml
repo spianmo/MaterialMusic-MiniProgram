@@ -1,4 +1,6 @@
 <!--pages/music/music.wxml-->
+
+<!-- 轮播图组件 -->
 <swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true" interval="3000" duration="1000"
   class="swiper">
   <block wx:for="{{imgUrls}}" wx:key="index">
@@ -7,35 +9,14 @@
     </swiper-item>
   </block>
 </swiper>
-    <!-- 推荐导航四大入口 -->
-    <view class='comment_container_box'>
-      <view class='comment_daily comment_box' bindtap="go_MV">
-        <view class='contaner_images'>
-          <image src='/images/MV.png' class='commentImage'></image>
-        </view>
-        <text class='comment_text'>推荐MV</text>
-      </view>
-      <view class='comment_private_FM comment_box'>
-        <view class='contaner_images' bindtap='go_songer'>
-          <image src='/images/songer.png' class='commentImage'></image>
-        </view>
-        <text class='comment_text'>歌手榜</text>
-      </view>
-      <view class='comment_songList comment_box' bindtap="go_songsheet">
-        <view class='contaner_images'>
-          <image src='/images/songList.png' class='commentImage'></image>
-        </view>
-        <text class='comment_text'>歌单</text>
-      </view>
-      <view class='comment_rank comment_box' bindtap='go_toplist'>
-        <view class='contaner_images'>
-          <image src='/images/rank.png' class='commentImage'></image>
-        </view>
-        <text class='comment_text'>榜单排行</text>
-      </view>
-    </view>
-<view>
-  <block wx:key="id">
-    <x-playlist playlist="{{playlist}}"></x-playlist>
+
+<!-- 推荐导航四大入口 -->
+<navigation/>
+
+<!-- 歌单组件 -->
+<text class='playlist-container_title' bindtap="go_songsheet">精选歌单</text>
+<view class="playlists-container">
+  <block wx:for="{{playlist}}" wx:key="id">
+    <x-playlist playlist="{{item}}"></x-playlist>
   </block>
 </view>

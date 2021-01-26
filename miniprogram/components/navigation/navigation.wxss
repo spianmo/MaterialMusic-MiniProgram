@@ -1,0 +1,32 @@
+/* components/navigation/navigation.wxss */
+.comment_container_box{
+  display: flex;
+  height: 130rpx;
+  position:relative;
+  margin-top: 36rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #EDEEF0;
+}
+.comment_box{
+  width: 25%;
+  text-align: center;
+}
+.contaner_images{
+  width: 80rpx;
+  height: 40px;
+  background-color: #DC4238;
+  border-radius: 50%;
+  left: 50%;
+  transform: translate(60%)
+}
+
+.commentImage{
+  width:50%;
+  height: 50%;
+  top:50%;
+  left: 50%;
+  transform: translate(0%,50%)
+}
+.comment_text{
+  font-size: 14px;
+}

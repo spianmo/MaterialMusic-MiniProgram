@@ -1,0 +1,27 @@
+<!--components/navigation/navigation.wxml-->
+<view class='comment_container_box'>
+  <view class='comment_daily comment_box' bindtap="go_MV">
+    <view class='contaner_images'>
+      <image src='/images/MV.png' class='commentImage'></image>
+    </view>
+    <text class='comment_text'>推荐MV</text>
+  </view>
+  <view class='comment_private_FM comment_box'>
+    <view class='contaner_images' bindtap='go_songer'>
+      <image src='/images/songer.png' class='commentImage'></image>
+    </view>
+    <text class='comment_text'>歌手榜</text>
+  </view>
+  <view class='comment_songList comment_box' bindtap="go_songsheet">
+    <view class='contaner_images'>
+      <image src='/images/songList.png' class='commentImage'></image>
+    </view>
+    <text class='comment_text'>歌单</text>
+  </view>
+  <view class='comment_rank comment_box' bindtap='go_toplist'>
+    <view class='contaner_images'>
+      <image src='/images/rank.png' class='commentImage'></image>
+    </view>
+    <text class='comment_text'>榜单排行</text>
+  </view>
+</view>
