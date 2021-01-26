@@ -1,0 +1,36 @@
+/* components/playlist/playlist.wxss */
+.title_leader_box{
+  text-align:center;
+  display: inline-block;
+}
+.songsheet_items_allbox{
+  margin-top: 25rpx;
+  padding: 18rpx;
+}
+.songsheet_container_title{
+  font-size: 17px;
+  font-weight: bold;
+  padding-left: 10rpx;
+}
+.songsheet_container_image{
+  width: 95%;
+  height: 220rpx;
+  margin: 5rpx;
+  border-radius: 12rpx;
+}
+.songsheet_container_text{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  
+  -webkit-box-orient: vertical;
+  font-size: 13px;
+  margin-top: 10rpx;
+  padding-left: 10rpx;
+}
+.songsheet_item_box{
+  padding-top: 10rpx;
+  width: 33%;
+  display: inline-block;
+  box-sizing: border-box;
+}

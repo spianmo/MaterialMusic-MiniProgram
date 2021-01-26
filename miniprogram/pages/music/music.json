@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "音乐"
+  "usingComponents": {
+    "x-playlist":"/components/playlist/playlist"
+  },
+  "navigationBarTitleText": "质感音乐Demo"
 }
