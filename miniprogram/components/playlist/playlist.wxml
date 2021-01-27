@@ -1,11 +1,8 @@
 <!--components/playlist/playlist.wxml-->
-    <!-- 精选歌单 -->
-    <view class='songsheet_items_allbox'>
-      <text class='songsheet_container_title' bindtap="go_songsheet">精选歌单</text>
-      <view class='songsheet_items_box'>
-        <view wx:for="{{playlist}}" wx:key="" class='songsheet_item_box' data-id="{{item.id}}" bindtap='handleSheet'>
-          <image src='{{item.coverImgUrl}}' class="songsheet_container_image"></image>
-          <text class='songsheet_container_text'>{{item.name}}</text>
-        </view>
-      </view>
-    </view>
+<!-- 精选歌单 -->
+
+<view class='playlist-container'>
+    <image src='{{playlist.coverImgUrl}}' class="playlist-img"></image>
+    <text class="playlist-playcount">{{_count}}</text>
+    <text class='playlist-name'>{{playlist.name}}</text>
+</view>
