@@ -8,3 +8,6 @@ style='background: url({{listInfo.coverImgUrl}}) no-repeat top/cover'></view>
   <image src="{{listInfo.coverImgUrl}}" class='detail-img'></image>
   <view class='detail-name'>{{listInfo.name}}</view>
 </view>
+
+<!-- 使用歌曲列表组件 -->
+<x-musiclist musiclist="{{musiclist}}"/>

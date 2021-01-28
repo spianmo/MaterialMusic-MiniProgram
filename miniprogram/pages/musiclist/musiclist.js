@@ -34,6 +34,9 @@ Page({
           name:pl.name,
         }
       })
+      wx.setNavigationBarTitle({
+        title: this.data.listInfo.name
+     })
       this._setMusiclist()
       wx.hideLoading()
     })
