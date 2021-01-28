@@ -3,7 +3,8 @@
     "pages/music/music",
     "pages/find/find",
     "pages/profile/profile",
-    "pages/test/test"
+    "pages/test/test",
+    "pages/musiclist/musiclist"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

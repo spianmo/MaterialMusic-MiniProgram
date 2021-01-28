@@ -3,5 +3,6 @@
     "x-playlist":"/components/playlist/playlist",
     "navigation":"/components/navigation/navigation"
   },
-  "navigationBarTitleText": "质感音乐Demo"
+  "navigationBarTitleText": "质感音乐Demo",
+  "enablePullDownRefresh": true
 }
