@@ -14,7 +14,7 @@
 <navigation/>
 
 <!-- 歌单组件 -->
-<text class='playlist-container_title' bindtap="go_songsheet">精选歌单</text>
+<text class='playlist-container_title'>精选歌单</text>
 <view class="playlists-container">
   <block wx:for="{{playlist}}" wx:key="_id">
     <x-playlist playlist="{{item}}"></x-playlist>
