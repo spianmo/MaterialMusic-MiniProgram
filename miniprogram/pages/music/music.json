@@ -3,6 +3,6 @@
     "x-playlist":"/components/playlist/playlist",
     "navigation":"/components/navigation/navigation"
   },
-  "navigationBarTitleText": "网易云音乐",
+  "navigationBarTitleText": "MaterialMusic",
   "enablePullDownRefresh": true
 }
