@@ -39,7 +39,7 @@
   },
   "appid": "wxb85e1082468b99c4",
   "projectname": "MaterialMusic",
-  "libVersion": "2.14.1",
+  "libVersion": "2.14.4",
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
     "search": {

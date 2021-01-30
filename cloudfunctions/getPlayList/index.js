@@ -8,7 +8,7 @@ cloud.init({
 const db = cloud.database();
 const playlistCollection = db.collection('playlist')
 const axios = require('axios')
-const URL = 'http://kirito666.cn1.utools.club/top/playlist/highquality?before=1503639064232&limit=100'
+const URL = 'http://47.98.169.198:3000/top/playlist/highquality?before=1503639064232&limit=100'
 // 云函数入口函数
 exports.main = async (event, context) => {
   const{

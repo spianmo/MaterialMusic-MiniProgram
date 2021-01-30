@@ -6,7 +6,7 @@ cloud.init({
 
 const TcbRouter = require('tcb-router')
 const axios = require('axios')
-const BASE_URL = 'http://kirito666.cn1.utools.club'
+const BASE_URL = 'http://47.98.169.198:3000'
 
 // 云函数入口函数
 exports.main = async (event, context) => {
@@ -33,6 +33,7 @@ exports.main = async (event, context) => {
   })
 
   app.router('musicUrl',async(ctx,next) => {
+    console.log(`${BASE_URL}/song/url?id=${parseInt(event.musicId)}`)
     const res = await axios.get(`${BASE_URL}/song/url?id=${parseInt(event.musicId)}`)
     console.log('######' + res)
     ctx.body = res.data
