@@ -1,66 +1,51 @@
-// pages/profile/profile.js
+const app = getApp();
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    img:[],
+    nickName:[],
+    hidden:true,
+    historyId:[]
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
 
+  onShow:function(){
+    var history = wx.getStorageSync('historyId');
+    // console.log(history)
+     this.setData({
+      hidden:true,
+      //  historyId: app.globalData.songName
+       historyId: history
+    })
+    console.log(this.data.historyId)
   },
+  onGotUserInfo: function (e) {
+    this.setData({
+      hidden:false
+    })
+    console.log(e.detail.errMsg)
+    console.log(e.detail.userInfo)
+    console.log(e.detail.rawData)
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    // this.setData({
+    //   hidden:true
+    // })
+      let that = this;
+        // 获取用户信息
+        wx.login({
+          success: function () {
+            wx.getUserInfo({
+              success: function (res) {
+                console.log(res.userInfo.avatarUrl);
+                console.log(res.userInfo.nickName);
+                that.setData({
+                  img:res.userInfo.avatarUrl,
+                  nickName:res.userInfo.nickName
+                })
+              }
+            });
+          }
+        });
   }
+
 })
