@@ -1,8 +1,7 @@
 <!--pages/music/music.wxml-->
 
 <!-- 轮播图组件 -->
-<swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true" interval="3000" duration="1000"
-  class="swiper">
+<swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true" interval="3000" duration="1000" class="swiper">
   <block wx:for="{{imgUrls}}" wx:key="index">
     <swiper-item>
       <image src="{{item.url}}" class="img" mode="scaleToFill"></image>

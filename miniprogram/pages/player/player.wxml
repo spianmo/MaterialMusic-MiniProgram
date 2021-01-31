@@ -3,10 +3,18 @@
 <view class="player-mask"></view>
 
 <view class="player-info">
-<!-- 封面信息 -->
+  <!-- 封面信息 -->
   <view class="player-disc {{isPlaying?'playing':''}}">
-    <image class="player-img zhuan {{isPlaying?'':'ting'}}" src="{{picUrl}}"></image>
+      <image class="player-img zhuan {{isPlaying?'':'ting'}}" src="{{picUrl}}"></image>
   </view>
+
+  <div class="container">
+    <div class="wave {{isPlaying ? 'play' : ''}} ripple danger" hidden="{{!isPlaying}}">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+</div>
   <!-- 控制面板 -->
   <view class="control">
     <text class="iconfont icon-hanhan-01-01" bindtap="onPrev"></text>

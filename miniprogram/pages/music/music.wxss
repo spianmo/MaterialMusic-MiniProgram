@@ -1,5 +1,3 @@
-@import "../../lib/weui.wxss";
-
 .swiper {
   height: 340rpx;
 }
