@@ -178,3 +178,11 @@
     transform: scale(1);
   }
 }
+
+.progress-bar{
+  width: 90%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 24%;
+}
