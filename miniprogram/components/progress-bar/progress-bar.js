@@ -53,7 +53,7 @@ Component({
       query.select('.movable-area').boundingClientRect()
       query.select('.movable-view').boundingClientRect()
       query.exec((rect) => {
-        console.log(rect)
+        //console.log(rect)
         movableAreaWidth = rect[0].width
         movableViewWidth = rect[1].width
       })
@@ -88,9 +88,9 @@ Component({
           const duration = backgroundAudioManager.duration
           const currentTime = backgroundAudioManager.currentTime
           const sec = currentTime.toString().split('.')[0]
-          console.log(sec)
+          //console.log(sec)
           if (sec != currentSec) {
-            console.log(currentTime)
+            //console.log(currentTime)
             const currentTimeFmt = this._timeFormat(currentTime)
             this.setData({
               distance: (movableAreaWidth - movableViewWidth) * currentTime / duration,
@@ -98,6 +98,9 @@ Component({
               ['showTime.currentTime']: `${currentTimeFmt.min}:${currentTimeFmt.sec}`
             })
             currentSec = sec
+            this.triggerEvent('timeUpdate',{
+              currentTime
+            })
           }
         }
       })
@@ -113,8 +116,8 @@ Component({
     _setTotalTime() {
       duration = backgroundAudioManager.duration
       const durationFmt = this._timeFormat(duration)
-      console.log("===>")
-      console.log(durationFmt)
+      //console.log("===>")
+      //console.log(durationFmt)
       this.setData({
         ['showTime.totalTime']: `${durationFmt.min}:${durationFmt.sec}`
       })
