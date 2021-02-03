@@ -1,0 +1,5 @@
+<view class="chip">
+  <text class="chip-icon {{disable? 'disable':''}} iconfont {{icon}}"></text>
+  <view class="chip-title {{disable? 'disable':''}}">{{title}}</view>
+  <view class="v-line" hidden="{{isLast ? true:false}}" />
+</view>

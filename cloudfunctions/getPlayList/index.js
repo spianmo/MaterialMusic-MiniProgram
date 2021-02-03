@@ -8,7 +8,7 @@ cloud.init({
 const db = cloud.database();
 const playlistCollection = db.collection('playlist')
 const axios = require('axios')
-const URL = 'http://47.98.169.198:3000/top/playlist/highquality?before=1503639064232&limit=100'
+const URL = 'http://47.98.169.198:3000/user/playlist?uid=494517430'
 // 云函数入口函数
 exports.main = async (event, context) => {
   const{
@@ -21,7 +21,7 @@ exports.main = async (event, context) => {
     return 0
   }
 
-  const playlist = data.playlists
+  const playlist = data.playlist
   const newData = []
   for(let i = 0, len = playlist.length; i < len; i++){
     let pl = playlist[i]

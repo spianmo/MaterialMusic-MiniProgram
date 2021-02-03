@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "toolbar":"/components/navigation-bar/navigation-bar"
+  },
   "navigationBarTitleText": "个人中心"
 }

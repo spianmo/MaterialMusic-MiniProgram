@@ -1,0 +1,36 @@
+@import "../../iconfont.wxss";
+
+.chip{
+  display: flex;
+  align-items: center;
+}
+
+.iconfont {
+  color: #2e2e2e;
+  font-size: 40rpx;
+}
+
+.chip-title{
+  color: #2e2e2e;
+  margin-left: 10rpx;
+  font-size: 24rpx;
+}
+
+.chip-icon.disable{
+  color: #c2c2c2;
+}
+
+.chip-title.disable{
+  color: #c2c2c2;
+}
+
+.v-line {
+  background: #bebebe;
+  float: flex;
+  height: 32rpx;
+  z-index: 5;
+  margin-left: 38rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  width: 2rpx;
+}

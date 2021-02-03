@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "x-playlist":"/components/playlist/playlist",
-    "navigation":"/components/navigation/navigation"
+    "navigation":"/components/navigation/navigation",
+    "toolbar":"/components/navigation-bar/navigation-bar"
   },
   "navigationBarTitleText": "MaterialMusic",
   "enablePullDownRefresh": true

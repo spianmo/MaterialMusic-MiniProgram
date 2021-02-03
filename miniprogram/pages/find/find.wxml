@@ -1,4 +1,10 @@
 <!--pages/find/find.wxml-->
+<toolbar>
+  <view class="toolbar-title" slot="content">
+    发现更多
+  </view>
+</toolbar>
+
 <view class="page__header">
   <!-- 输入框 -->
   <view class="weui-search-bar">

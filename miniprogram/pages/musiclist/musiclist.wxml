@@ -1,13 +1,46 @@
-<!-- 封面图背景 -->
-<view wx:if="{{listInfo.coverImgUrl}}" class='detail-container'
-style='background: url({{listInfo.coverImgUrl}}) no-repeat top/cover'></view>
-<!-- 遮罩层 -->
-<view class='detail-mask'></view>
-<!-- 歌单信息，左图右文 -->
-<view class='detail-info'>
-  <image src="{{listInfo.coverImgUrl}}" class='detail-img'></image>
-  <view class='detail-name'>{{listInfo.name}}</view>
-</view>
+<view style="height:100%;position:fixed;width:100%;">
+  <scroll-view scroll-y="false" bindscroll="scroll" style="height:100%;">
+    <view class="page-group">
+      <!-- 封面图背景 -->
+      <view wx:if="{{listInfo.coverImgUrl}}" class='detail-container'
+        style='background: url({{listInfo.coverImgUrl}}) no-repeat top/cover'></view>
+      <!-- 遮罩层 -->
+      <view class='detail-mask'></view>
+      <!-- 顶部导航栏 -->
+      <toolbar style="opacity:{{scrollTop / 200}};background: url({{listInfo.coverImgUrl}}) no-repeat top/cover;">
+        <image src="../../images/back.png" slot="left" style="width:50rpx;height:50rpx;opacity:1;" bindtap="_back"></image>
+        <view class="toolbar-title" slot="content">{{listInfo.name}}</view>
+      </toolbar>
 
-<!-- 使用歌曲列表组件 -->
-<x-musiclist musiclist="{{musiclist}}"/>
+      <view class="musiclist-header">
+        <!-- 歌单信息，左图右文 -->
+        <view class='detail-info'>
+          <image src="{{listInfo.coverImgUrl}}" class='detail-img'></image>
+          <view style="margin-left: 24rpx;">
+            <view class='detail-name'>{{listInfo.name}}</view>
+            <view class="profile-small">
+              <image src="{{avatarUrl}}" class='avatar'></image>
+              <view class="profile-nickname">{{nickname}}</view>
+            </view>
+            <view class="musiclist-desc">{{description}}</view>
+          </view>
+        </view>
+
+
+        <!-- 收藏、评论、分享 -->
+
+        <view class="musiclist-chipgroup-bar">
+          <chip title='{{starNum}}' icon='icon-shoucang' />
+          <chip title='{{commitNum}}' icon='icon-pinglun-' />
+          <chip title='{{shareNum}}' icon='icon-fenxiang' isLast='{{true}}' />
+        </view>
+
+      </view>
+
+      <!-- 使用歌曲列表组件 -->
+      <view class="musiclist-container">
+        <x-musiclist musiclist="{{musiclist}}" />
+      </view>
+    </view>
+  </scroll-view>
+</view>

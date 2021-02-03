@@ -13,4 +13,6 @@
       <view class="musiclist-singer">{{item.ar[0].name}} - {{item.al.name}}</view>
     </view>
   </view>
+  <!-- 分割线 -->
+  <view class="divLine"></view>
 </block>

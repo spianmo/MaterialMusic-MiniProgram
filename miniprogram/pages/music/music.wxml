@@ -1,21 +1,29 @@
-<!--pages/music/music.wxml-->
+<!-- 顶部导航栏 -->
+<toolbar>
+  <view class="toolbar-title" slot="content">
+    MaterialMusic
+  </view>
+</toolbar>
 
-<!-- 轮播图组件 -->
-<swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true" interval="3000" duration="1000" class="swiper">
-  <block wx:for="{{imgUrls}}" wx:key="index">
-    <swiper-item>
-      <image src="{{item.url}}" class="img" mode="scaleToFill"></image>
-    </swiper-item>
-  </block>
-</swiper>
+<view>
+  <!-- 轮播图组件 -->
+  <swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true" interval="3000" duration="1000"
+    class="swiper">
+    <block wx:for="{{imgUrls}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.url}}" class="img" mode="scaleToFill"></image>
+      </swiper-item>
+    </block>
+  </swiper>
 
-<!-- 推荐导航四大入口 -->
-<navigation/>
+  <!-- 推荐导航四大入口 -->
+  <navigation />
 
-<!-- 歌单组件 -->
-<text class='playlist-container_title'>精选歌单</text>
-<view class="playlists-container">
-  <block wx:for="{{playlist}}" wx:key="_id">
-    <x-playlist playlist="{{item}}"></x-playlist>
-  </block>
+  <!-- 歌单组件 -->
+  <text class='playlist-container_title'>精选歌单</text>
+  <view class="playlists-container">
+    <block wx:for="{{playlist}}" wx:key="_id">
+      <x-playlist playlist="{{item}}"></x-playlist>
+    </block>
+  </view>
 </view>

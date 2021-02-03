@@ -39,7 +39,7 @@ Component({
     ready() {
       wx.getSystemInfo({
         success: (res) => {
-          lyricHeight = res.screenWidth / 750 * 64
+          lyricHeight = res.screenWidth / 750 * 72
         },
       })
     },
@@ -63,10 +63,10 @@ Component({
           })
         }
       }
-      for (let i = 0,len = lrcList.length; i < len; i++) {
+      for (let i = 0, len = lrcList.length; i < len; i++) {
         if (currentTime <= lrcList[i].time) {
           this.setData({
-            nowLyricIndex: i-1,
+            nowLyricIndex: i - 1,
             scrollTop: (i - 1) * lyricHeight
           })
           break
@@ -76,26 +76,26 @@ Component({
     _parseLyric(lyricSrc) {
       let lines = lyricSrc.split('\n')
       let _lrcList = []
-      lines.forEach((elem)=>{
+      lines.forEach((elem) => {
         //匹配出时间
-        let time =elem.match(/\[(\d{2,}):(\d{2})(?:\.(\d{2,3}))?]/g)
-        if(time!=null){
+        let time = elem.match(/\[(\d{2,}):(\d{2})(?:\.(\d{2,3}))?]/g)
+        if (time != null) {
           //用时间作为分隔符
-          let lrc=elem.split(time)[1]
+          let lrc = elem.split(time)[1]
           //正则匹配出时间，分，秒，毫秒
-          let timeReg=time[0].match(/(\d{2,}):(\d{2})(?:\.(\d{2,3}))?/)
+          let timeReg = time[0].match(/(\d{2,}):(\d{2})(?:\.(\d{2,3}))?/)
           console.log(timeReg)
           //把时间转换为秒
-          let time2Seconds=parseInt(timeReg[1])*60+parseInt(timeReg[2])+
-            parseInt(timeReg[3])/1000
-            //每行歌词对象包括：歌词内容和这行歌词所在的秒
-            _lrcList.push({
-              lrc,
-              time:time2Seconds,
-            })
+          let time2Seconds = parseInt(timeReg[1]) * 60 + parseInt(timeReg[2]) +
+            parseInt(timeReg[3]) / 1000
+          //每行歌词对象包括：歌词内容和这行歌词所在的秒
+          _lrcList.push({
+            lrc,
+            time: time2Seconds,
+          })
         }
-      //  const lrc= elem.split(']')[1]
-      //  _lyris.push(lrc)
+        //  const lrc= elem.split(']')[1]
+        //  _lyris.push(lrc)
       })
       this.setData({
         lyrics: _lrcList

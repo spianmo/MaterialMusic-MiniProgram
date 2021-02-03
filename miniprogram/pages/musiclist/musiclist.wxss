@@ -1,42 +1,109 @@
 /* miniprogram/pages/musiclist/musiclist.wxss */
+.page {
+  background-color: #dadada;
+}
+
+.musiclist-header{
+  /* position:relative; */
+}
+
 .detail-container {
+  top: 0;
   height: 320rpx;
   filter: blur(40rpx);
   opacity: 0.4;
 }
 
-.detail-mask{
+.detail-mask {
   position: absolute;
   width: 100%;
-  height: 320rpx;
+  height: 480rpx;
   background-color: #333;
   top: 0;
   left: 0;
   z-index: -1;
 }
 
-.detail-info{
+.detail-info {
   display: flex;
   position: absolute;
-  top: 0;
+  top: 70px;
   left: 0;
   width: 100%;
-  height: 320rpx;
-  padding: 20rpx;
-  box-sizing: border-box;
+  height: 480rpx;
+  padding: 36rpx;
+  align-items: stretch;
+}
+
+.detail-img {
+  width: 200rpx;
+  z-index: -1;
+  height: 200rpx;
+  border-radius: 24rpx;
+}
+
+.detail-name {
+  color: #ffffff;
+  font-size: 32rpx;
+  line-height: 1.5;
+  width: 90%;
+  font-weight: 400;
+}
+
+.avatar {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 48rpx;
+}
+
+.profile-small {
+  display: flex;
+  margin-top: 18rpx;
   align-items: center;
 }
 
-.detail-img{
-  width: 280rpx;
-  height: 280rpx;
-  margin-right: 24rpx;
-  border-radius: 6rpx;
+.profile-nickname {
+  color: #ffffff;
+  font-size: 24rpx;
+  margin-left: 10rpx;
 }
 
-.detail-name{
+.musiclist-desc {
+  margin-top: 12rpx;
   color: #ffffff;
-  font-size: 36rpx;
-  line-height: 1.5;
-  font-weight: 400;
+  font-size: 24rpx;
+}
+
+.musiclist-chipgroup-bar {
+  margin: 0 auto;
+  border-radius: 48rpx;
+  background-color: #ffffff;
+  width: 68%;
+  height: 78rpx;
+  display: flex;
+  margin-top: -56rpx;
+  align-items: center;
+  z-index: 2;
+  box-shadow: 0rpx 0rpx 10rpx rgba(4, 0, 0, .2);
+  justify-content: space-around;
+}
+
+.musiclist-container {
+  margin-top: 42rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  padding: 10rpx;
+  z-index: 2;
+  border-radius: 28rpx;
+  box-shadow: 0rpx 0rpx 10rpx rgba(4, 0, 0, .2);
+  background-color: #ffffff;
+}
+
+.toolbar-title {
+  color: #FFFFFF;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: 60rpx;
+  margin-top: -10rpx;
 }

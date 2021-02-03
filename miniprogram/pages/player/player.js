@@ -11,7 +11,8 @@ Page({
     picUrl: '',
     isPlaying: false,
     isLyricShow: false,
-    lyric: '暂无歌词'
+    lyric: '暂无歌词',
+    currentMusicName: '',
   },
 
   /**
@@ -27,6 +28,9 @@ Page({
   _loadMusicDetail(musicId) {
     let music = musiclist[playingIndex]
     console.log(music)
+    this.setData({
+      currentMusicName:music.name
+    })
     wx.setNavigationBarTitle({
       title: music.name,
     })
@@ -127,5 +131,10 @@ Page({
       playingIndex = 0
     }
     this._loadMusicDetail(musiclist[playingIndex].id)
+  },
+  _back() {
+    wx.navigateBack({
+      delta: 1
+    })
   }
 })

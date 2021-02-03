@@ -173,3 +173,12 @@ input{
 .title{
   color: #000000;
 }
+
+.toolbar-title {
+  color: #FFFFFF;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: 60rpx;
+  margin-top: -10rpx;
+}

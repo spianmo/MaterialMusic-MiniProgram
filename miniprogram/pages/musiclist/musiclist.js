@@ -7,6 +7,16 @@ Page({
   data: {
     musiclist: [],
     listInfo: {},
+    starNum: 0,
+    commitNum: 0,
+    shareNum: 0,
+    description:'',
+    nickname:'',
+    avatarUrl:'',
+    scrollTop: null,
+  },
+  scroll: function (e) {
+    this.setData({ scrollTop: e.detail.scrollTop })
   },
 
   /**
@@ -19,79 +29,41 @@ Page({
     })
     wx.cloud.callFunction({
       name: 'music',
-      data:{
-        playlistId:options.playlistId,
-        $url:'musiclist'
+      data: {
+        playlistId: options.playlistId,
+        $url: 'musiclist'
       }
     }).then((res) => {
       console.log(res)
       console.log(res.result)
       const pl = res.result.playlist
       this.setData({
-        musiclist:pl.tracks,
-        listInfo:{
-          coverImgUrl:pl.coverImgUrl,
-          name:pl.name,
-        }
+        musiclist: pl.tracks.concat(pl.tracks),
+        listInfo: {
+          coverImgUrl: pl.coverImgUrl,
+          name: pl.name,
+        },
+        starNum: pl.subscribedCount,
+        commitNum: pl.commentCount,
+        shareNum: pl.shareCount,
+        description: pl.description.substring(0,18)+"...",
+        avatarUrl:pl.creator.avatarUrl,
+        nickname:pl.creator.nickname,
       })
       wx.setNavigationBarTitle({
         title: this.data.listInfo.name
-     })
+      })
       this._setMusiclist()
       wx.hideLoading()
     })
   },
 
-  _setMusiclist(){
+  _setMusiclist() {
     wx.setStorageSync('musiclist', this.data.musiclist)
   },
-
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page show
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page hide
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * Page event handler function--Called when user drop down
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage: function () {
-
+  _back() {
+    wx.navigateBack({
+      delta: 1
+    })
   }
 })
