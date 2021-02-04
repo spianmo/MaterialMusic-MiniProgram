@@ -1,4 +1,4 @@
-// miniprogram/pages/musiclist/musiclist.js
+const app = getApp()
 Page({
 
   /**
@@ -10,13 +10,29 @@ Page({
     starNum: 0,
     commitNum: 0,
     shareNum: 0,
-    description:'',
-    nickname:'',
-    avatarUrl:'',
-    scrollTop: null,
+    description: '',
+    nickname: '',
+    avatarUrl: '',
+    statusBarHeight: 0,
+    opacity: 0,
+    title: '歌单'
+
   },
-  scroll: function (e) {
-    this.setData({ scrollTop: e.detail.scrollTop })
+  onPageScroll(e) {
+    let scrollTop = e.scrollTop
+    if (scrollTop > 44) {
+      this.setData({
+        title: this.data.listInfo.name,
+      })
+    } else {
+      this.setData({
+        title: '歌单',
+      })
+    }
+    let _opacity = (scrollTop / 100 > 1) ? 1 : scrollTop / 100
+    this.setData({
+      opacity: _opacity
+    })
   },
 
   /**
@@ -24,6 +40,10 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
+    console.log(app.globalData.systemInfo)
+    this.setData({
+      statusBarHeight: app.globalData.systemInfo.statusBarHeight
+    })
     wx.showLoading({
       title: '加载中',
     })
@@ -42,13 +62,21 @@ Page({
         listInfo: {
           coverImgUrl: pl.coverImgUrl,
           name: pl.name,
+          coverImgUrl: pl.coverImgUrl,
+          name: pl.name,
+          avatarUrl: pl.creator.avatarUrl,
+          nickname: pl.creator.nickname,
+          subscribedCount: pl.subscribedCount,
+          commentCount: pl.commentCount,
+          shareCount: pl.shareCount,
+          description: pl.description,
         },
         starNum: pl.subscribedCount,
         commitNum: pl.commentCount,
         shareNum: pl.shareCount,
-        description: pl.description.substring(0,18)+"...",
-        avatarUrl:pl.creator.avatarUrl,
-        nickname:pl.creator.nickname,
+        description: pl.description,
+        avatarUrl: pl.creator.avatarUrl,
+        nickname: pl.creator.nickname,
       })
       wx.setNavigationBarTitle({
         title: this.data.listInfo.name
@@ -61,7 +89,7 @@ Page({
   _setMusiclist() {
     wx.setStorageSync('musiclist', this.data.musiclist)
   },
-  _back() {
+  back() {
     wx.navigateBack({
       delta: 1
     })

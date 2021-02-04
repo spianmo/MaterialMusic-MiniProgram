@@ -8,25 +8,20 @@ App({
         traceUser: true,
       })
     }
-    globaData : {
-
+    this.globalData = {
+      systemInfo: this.getSystemInfo(),
     }
-    wx.getSystemInfo({
-      success: function success(res) {
-        var ios = !!(res.system.toLowerCase().search('ios') + 1);
-        var statusBarHeight = res.statusBarHeight;
-        var topBarHeight = ios ? (44 + statusBarHeight) : (48 + statusBarHeight);
-        var innerWidth = wx.getMenuButtonBoundingClientRect().left
-        var innerPaddingRight = res.windowWidth - innerWidth
-        wx.setStorageSync("systemInfo",{
-          ios: ios,
-          topBarHeight: topBarHeight,
-          statusBarHeight: statusBarHeight,
-          innerWidth: 'width:' + innerWidth + 'px',
-          innerPaddingRight: 'padding-right:' + innerPaddingRight + 'px',
-          contentWidth: innerWidth / 1 + 'px'
-        })
-      }
-    })
+  },
+  getSystemInfo: function () {
+    let systemInfo = wx.getSystemInfoSync()
+    let pxToRpxScale = 750 /systemInfo.windowHeight
+    var statusBarHeight = systemInfo.statusBarHeight;
+    let rect = wx.getMenuButtonBoundingClientRect()
+    const sysInfo = {
+      pxToRpxScale,
+      statusBarHeight,
+      rect
+    }
+    return sysInfo
   }
 })

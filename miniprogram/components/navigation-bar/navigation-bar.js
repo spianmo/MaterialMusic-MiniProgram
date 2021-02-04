@@ -24,7 +24,9 @@ Component({
 
   lifetimes: {
     ready() {
-      this.setData(wx.getStorageSync("systemInfo"))
+      this.setData({
+        statusBarHeight: app.globalData.systemInfo.statusBarHeight
+      })
     },
   },
 
