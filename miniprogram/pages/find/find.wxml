@@ -1,43 +1,13 @@
-<!--pages/find/find.wxml-->
 <toolbar>
   <view class="toolbar-title" slot="content">
-    发现更多
+    发现
   </view>
 </toolbar>
-
-<view class="page__header">
-  <!-- 输入框 -->
-  <view class="weui-search-bar">
-    <view class="weui-search-bar__form">
-      <view class="weui-search-bar__box">
-        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-        <input type="text" class="weui-search-bar__input" />
-      </view>
-      <label class="weui-search-bar__label" bindtap="go_search">
-        <icon class="weui-icon-search" type="search" size="12" color='#EDA8A3'></icon>
-        <view class="weui-search-bar__text">请输入歌手或歌曲名</view>
-      </label>
+  <view class="header">
+    <view class="left" bind:tap="onPublish">
+      <text class="iconfont icon-zuixing-12"></text>
+    </view>
+    <view class="right">
+      <x-search bind:search="onSearch"/>
     </view>
   </view>
-</view>
-
-<view class='songsheet_items_allbox'>
-  <view class='songsheet_items_box'>
-    <view wx:key="" class='songsheet_item_box' bindtap='go_toplist0'>
-      <image src='{{toplists0.coverImgUrl}}' class="songsheet_container_image"></image>
-      <text class='songsheet_container_text'>{{toplists0.name}}</text>
-    </view>
-    <view wx:key="" class='songsheet_item_box' bindtap='go_toplist1'>
-      <image src='{{toplists1.coverImgUrl}}' class="songsheet_container_image"></image>
-      <text class='songsheet_container_text'>{{toplists1.name}}</text>
-    </view>
-    <view wx:key="" class='songsheet_item_box' bindtap='go_toplist2'>
-      <image src='{{toplists2.coverImgUrl}}' class="songsheet_container_image"></image>
-      <text class='songsheet_container_text'>{{toplists2.name}}</text>
-    </view>
-    <view wx:key="" class='songsheet_item_box' bindtap='go_toplist3'>
-      <image src='{{toplists3.coverImgUrl}}' class="songsheet_container_image"></image>
-      <text class='songsheet_container_text'>{{toplists3.name}}</text>
-    </view>
-  </view>
-</view>

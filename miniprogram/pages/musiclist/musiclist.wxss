@@ -206,7 +206,8 @@
   position: absolute;
   bottom: -20px;
   width: 70%;
-  height: 90rpx;
+  height: 78rpx;
+  opacity: 0.96;
   border-radius: 48rpx;
   background-color: #ffffff;
   display: flex;

@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "x-search":"/components/search/search",
     "toolbar":"/components/navigation-bar/navigation-bar"
   },
   "navigationBarTitleText": "发现"

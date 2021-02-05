@@ -35,6 +35,12 @@
           "pathName": "pages/player/player",
           "query": "musicId=28704800&index=0",
           "scene": null
+        },
+        {
+          "name": "pages/find/find",
+          "pathName": "pages/find/find",
+          "query": "",
+          "scene": null
         }
       ]
     }
