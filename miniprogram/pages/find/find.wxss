@@ -13,10 +13,19 @@
 }
 
 .icon-zuixing-12{
-  padding: 10px;
   font-size: 30px;
+}
+
+.left{
+  margin: 4px;
 }
 
 .right{
   margin-right: 10px;
+}
+
+.container{
+  margin-top: 10rpx;
+  box-sizing: border-box;
+  height: 100vh;
 }
