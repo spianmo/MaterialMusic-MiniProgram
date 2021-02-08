@@ -3,16 +3,22 @@
     发现
   </view>
 </toolbar>
-  <view class="header">
-    <view class="left" bind:tap="onPublish">
-      <text class="iconfont icon-zuixing-12"></text>
-    </view>
-    <view class="right">
-      <x-search bind:search="onSearch"/>
-    </view>
+<view class="header">
+  <view class="left" bind:tap="onPublish">
+    <text class="iconfont icon-zuixing-12"></text>
   </view>
+  <view class="right">
+    <x-search bind:search="onSearch" />
+  </view>
+</view>
 
-  <scroll-view class="container" scroll-y>
-    <x-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail">
-    </x-login>
-  </scroll-view>
+<!--博客卡片列表-->
+
+<block wx:for="{{blogList}}" wx:key="_id">
+  <view class="blog-panel">
+    <x-blog-card blog="{{item}}" data-blogid="{{item._id}}" bind:tap="goComment" />
+  </view>
+</block>
+
+<x-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail">
+</x-login>

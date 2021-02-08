@@ -11,6 +11,7 @@
 }
 
 .container {
+  margin-top: 56px;
   padding: 20rpx;
 }
 

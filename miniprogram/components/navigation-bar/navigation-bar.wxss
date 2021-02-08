@@ -1,7 +1,4 @@
-page {
-  --height: 44px;
-  --right: 190rpx;
-}
+
 
 .navbar-content {
   overflow: hidden;
