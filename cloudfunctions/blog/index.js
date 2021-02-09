@@ -12,7 +12,17 @@ exports.main = async (event, context) => {
   })
   //获取博客列表数据
   app.router('list', async (ctx, next) => { //根据创建时间降序排列分页查询
-    let blogList = await blogCollection.skip(event.start).limit(event.count)
+    const keyword = event.keyword
+    let w = {}
+    if (keyword.trim() != '') {
+      w = {
+        content: new db.RegExp({
+          regexp: keyword,
+          options: 'i'
+        })
+      }
+    }
+    let blogList = await blogCollection.where(w).skip(event.start).limit(event.count)
     .orderBy('createTime', 'desc').get().then((res) => {
       return res.data
     })

@@ -1,6 +1,9 @@
-@import "c:\\Users\\Finger\\WeChatProjects\\MaterialMusic\\miniprogram\\global.scss";
+@import "..\\..\\global.scss";
 
 .blog {
+  margin-top: 1rpx;
+  margin-left: 8rpx;
+  margin-right: 8rpx;
   padding: $gap;
   background-color: $bgColor;
 }

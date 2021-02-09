@@ -1,5 +1,6 @@
 
 .swiper {
+  margin-top: 48px;
   height: 340rpx;
 }
 
