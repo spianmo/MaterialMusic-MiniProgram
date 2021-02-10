@@ -1,9 +1,9 @@
 @import "..\\..\\global.scss";
 
 .blog {
-  margin-top: 1rpx;
-  margin-left: 8rpx;
-  margin-right: 8rpx;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  margin-top:5px;
   padding: $gap;
   background-color: $bgColor;
 }
@@ -40,6 +40,9 @@
   font-size: $primarySize;
   font-weight: 400;
   line-height: 1.5;
+  padding-top: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .blog-img {
@@ -47,6 +50,8 @@
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 8px;
 
   .img {
     flex: l;

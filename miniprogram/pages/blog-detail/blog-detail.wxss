@@ -1,0 +1,96 @@
+@charset "UTF-8";
+page {
+  background-color: #EDEDED;
+}
+
+.toolbar-title {
+  color: #FFFFFF;
+  margin-left: 74rpx;
+  margin-top: -10rpx;
+}
+
+.container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100rpx;
+}
+
+.blog-card {
+  margin-bottom: 5px;
+}
+
+.tab {
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 20rpx;
+  background: #fff;
+  color: #697480;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/*评论列表*/
+.comment-list {
+  border-radius: 12px;
+  border-radius: 12px;
+  box-shadow: 0rpx 0rpx 10rpx rgba(4, 0, 0, 0.2);
+  border-bottom: 1rpx solid #ccc;
+  background-color: #fff;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.comment {
+  padding: 16px;
+}
+
+.comment-title {
+  display: flex;
+  align-items: center;
+}
+
+.comment-avatar {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.comment-nickname {
+  flex: l;
+  color: #999;
+}
+
+.comment-content {
+  font-size: 32rpx;
+  line-height: 1.5;
+  font-weight: 400;
+  padding: 20rpx 0;
+  color: #999;
+}
+
+.comment-time {
+  font-size: 24rpx;
+  color: #939393;
+}
+
+/*底部控制条*/
+.blog-ctrl {
+  box-shadow: 0rpx 0rpx 10rpx rgba(4, 0, 0, 0.2);
+  position: fixed;
+  width: 100%;
+  height: 100rpx;
+  left: 0;
+  bottom: 0;
+  border-top: 2rpx solid rgba(0, 0, 0, 0.1);
+}
+
+.divLine {
+  background: #eeeeee;
+  float: flex;
+  width: 96%;
+  margin-right: 2%;
+  margin-left: 2%;
+  height: 1rpx;
+}

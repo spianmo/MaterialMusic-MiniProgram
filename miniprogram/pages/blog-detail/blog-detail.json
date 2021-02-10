@@ -1,11 +1,7 @@
 {
   "usingComponents": {
-    "x-search":"/components/search/search",
     "toolbar":"/components/navigation-bar/navigation-bar",
-    "x-login":"/components/login/login",
     "x-blog-card": "/components/blog-card/blog-card",
     "x-blog-ctrl": "/components/blog-ctrl/blog-ctrl"
-  },
-  "navigationBarTitleText": "发现",
-  "enablePullDownRefresh": true
+  }
 }

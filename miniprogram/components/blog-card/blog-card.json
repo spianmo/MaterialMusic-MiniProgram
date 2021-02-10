@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "x-blog-ctrl": "/components/blog-ctrl/blog-ctrl"
+    
   }
 }

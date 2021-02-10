@@ -94,6 +94,7 @@ Component({
           modalShow: false,
           content: '',
         })
+        this.triggerEvent('refreshCommentList')
       })
     },
   }

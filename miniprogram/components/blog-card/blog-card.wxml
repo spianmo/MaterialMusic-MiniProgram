@@ -19,6 +19,4 @@
     <image class="img"src="{{item}}" mode="aspectFill" catch:tap="onPreviewImage" data-imgsrc="{{item}}" data-imgs="{{blog.imgs}}" />
     </block>
   </view>
-
-  <x-blog-ctrl blogId="{{blog._id}}" blog="{{blog}}"/>
 </view>
