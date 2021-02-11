@@ -1,0 +1,7 @@
+<toolbar>
+  <image src="../../images/back.png" slot="left" style="width:50rpx;height:50rpx;opacity:1;" bindtap="back"></image>
+  <view class="toolbar-title" slot="content">
+    最近播放
+  </view>
+</toolbar>
+<x-musiclist style="margin-top:48px;" musiclist="{{musiclist}}" />

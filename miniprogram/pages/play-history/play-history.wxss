@@ -1,0 +1,5 @@
+.toolbar-title {
+  color: #FFFFFF;
+  margin-left: 74rpx;
+  margin-top: -10rpx;
+}

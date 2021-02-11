@@ -8,13 +8,27 @@ App({
         traceUser: true,
       })
     }
+
+    this.getOpenid()
     this.globalData = {
       systemInfo: this.getSystemInfo(),
     }
   },
+  getOpenid() {
+    wx.cloud.callFunction({
+      name: 'login'
+    }).then((res) => {
+      const openid = res.result.openid
+      this.globalData.openid = openid
+      if (wx.getStorageSync(openid) == '') {
+        wx.setStorageSync(openid, [])
+      }
+    })
+  },
+
   getSystemInfo: function () {
     let systemInfo = wx.getSystemInfoSync()
-    let pxToRpxScale = 750 /systemInfo.windowHeight
+    let pxToRpxScale = 750 / systemInfo.windowHeight
     var statusBarHeight = systemInfo.statusBarHeight;
     let rect = wx.getMenuButtonBoundingClientRect()
     const sysInfo = {

@@ -1,7 +1,5 @@
 {
   "usingComponents": {
     "toolbar":"/components/navigation-bar/navigation-bar"
-  },
-  "navigationBarTitleText": "个人中心",
-  "disableScroll":true
+  }
 }

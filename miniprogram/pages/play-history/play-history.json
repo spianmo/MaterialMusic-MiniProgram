@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "toolbar":"/components/navigation-bar/navigation-bar",
+    "x-musiclist": "/components/musiclist/musiclist"
+  }
+}

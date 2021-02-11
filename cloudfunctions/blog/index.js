@@ -29,6 +29,14 @@ exports.main = async (event, context) => {
     ctx.body = blogList
   })
 
+  app.router('getListByOpenid',async(ctx,next) => {
+    let blogList = await blogCollection.skip(event.start).limit(event.count)
+      .orderBy('createTime', 'desc').get().then((res) => {
+        return res.data
+      })
+    ctx.body = blogList
+  })
+
   app.router('detail', async (ctx, next) => {
     let blogId = event.blogId
     const blog = await blogCollection.aggregate().match({

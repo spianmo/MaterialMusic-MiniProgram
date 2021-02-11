@@ -1,25 +1,26 @@
-<toolbar>
-  <view class="toolbar-title" slot="content">
-    登录到我的网易云
+<view class="profile-header">
+  <view class="avatar">
+    <!--用open-data来获得头像和昵称-->
+    <open-data type="userAvatarUrl"></open-data>
   </view>
-</toolbar>
-<button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo"
-  class="{{hidden ? 'sign' : 'hidden_btn'}}">登录</button>
-
-<view class="{{hidden ? 'hidden_btn' : 'head'}}">
-  <image src="{{img}}" class="background_img"></image>
-  <view class="image_box">
-    <image src="{{img}}" class="image"></image>
-  </view>
-  <view class="nickName_box">
-    <text class="nickName">{{nickName}}</text>
-  </view>
+  <open-data type="userNickName" class="nickname"></open-data>
 </view>
 
-<view class="{{hidden ? 'hidden_btn' : 'body'}}">
-  <view class="hot_key_box">
-    <view class="hot_keys_box_item" wx:for="{{historyId}}" wx:key="">
-      {{item.songName}}
-    </view>
+<view class="nav">
+  <view class="nav-item">
+    <navigator class="content" hover-class="none" url="/pages/play-history/play-history">
+      <text class="text">最近播放</text>
+      <i class="iconfont icon-right"></i></navigator>
+  </view>
+  <view class="divLine"></view>
+  <view class="nav-item">
+    <navigator class="content" hover-class="none" url="/pages/profile-blog/profile-blog">
+      <text class="text">我的博客</text>
+      <i class="iconfont icon-right"></i></navigator>
+  </view>
+  <view class="divLine"></view>
+  <view class="nav-item">
+    <view class="content" bind:tap="onTapQrCode"><text class="text">小程序码</text>
+      <i class="iconfont icon-right"></i></view>
   </view>
 </view>
